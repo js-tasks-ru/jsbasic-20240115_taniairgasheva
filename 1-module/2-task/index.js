@@ -1,16 +1,12 @@
-/**
- * Эту функцию трогать не нужно
- */
 function print(text) {
   console.log(text);
 }
 
-/**
- * Эту функцию нужно поменять так,
- * чтобы функция sayHello работала корректно
- */
 function isValid(name) {
-  // ваш код...
+return
+  name === null || //сначала проверяем на null, так как у null нет property length.
+  name.length < 4 || 
+  name.match(' ') ? false : true; //проверка наличия пробелов, можно name.includes(...)
 }
 
 function sayHello() {

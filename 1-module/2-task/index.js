@@ -3,8 +3,7 @@ function print(text) {
 }
 
 function isValid(name) {
-return
-  name === null || //сначала проверяем на null, так как у null нет property length.
+return name === null || //сначала проверяем на null, так как у null нет property length.
   name.length < 4 || 
   name.match(' ') ? false : true; //проверка наличия пробелов, можно name.includes(...)
 }

@@ -7,5 +7,3 @@ function getMinMax(str) {
 
   return result;
 }
-
-console.log(getMinMax("1.2 и 3"));

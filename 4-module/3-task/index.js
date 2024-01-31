@@ -7,9 +7,7 @@ function highlight(table) {
 
     //Добавление класса и атрибута
     if (!status) row.hidden = true;
-    status === "true"
-      ? row.classList.add("available")
-      : row.classList.add("unavailable");
+    row.classList.add(status === "true" ? "available" : "unavailable");
 
     //Добавление класса в зависимости от гендера
     row.classList.add(gender.innerText === "m" ? "male" : "female");

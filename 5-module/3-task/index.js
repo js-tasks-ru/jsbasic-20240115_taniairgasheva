@@ -8,18 +8,14 @@ function initCarousel() {
   let position = 0;
   arrowLeft.style.display = "none";
 
-  arrowRight.addEventListener("click", () => {
-    position += width;
+  function moveSlides(direction) {
+    position += width * direction;
     slides.style.transform = `translateX(-${position}px)`;
-    arrowLeft.style.display = "";
-    if (position === (slidesTotal - 1) * width)
-      arrowRight.style.display = "none";
-  });
+    arrowLeft.style.display = position === 0 ? "none" : "";
+    arrowRight.style.display =
+      position === (slidesTotal - 1) * width ? "none" : "";
+  }
 
-  arrowLeft.addEventListener("click", () => {
-    position -= width;
-    slides.style.transform = `translateX(-${position}px)`;
-    if (position === 0) arrowLeft.style.display = "none";
-    arrowRight.style.display = "";
-  });
+  arrowLeft.addEventListener("click", () => moveSlides(-1));
+  arrowRight.addEventListener("click", () => moveSlides(1));
 }
